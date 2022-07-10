@@ -1,7 +1,7 @@
 def stock_picker(prices)
     price_hash = create_price_hash(prices)
     max_profit = price_hash.max { |a, b| a[:price_difference] <=> b[:price_difference]}
-    puts max_profit
+    [max_profit[:buy_index], max_profit[:sell_index]]
 end
 
 def create_price_hash(prices)
@@ -14,4 +14,4 @@ def create_price_hash(prices)
     price_difference
 end
 
-stock_picker([17,3,6,9,15,8,6,1,10])
+puts stock_picker([17,3,6,9,15,8,6,1,10])
